@@ -1,2 +1,77 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
 
-dsd
+#include <cstring>
+using namespace std;
+
+/*
+1705 --> 18
+1900 --> 19
+1601 --> 17
+2000 --> 20
+2742 --> 28
+*/
+/*
+1705
+1705
+ */
+int centuryFromYear(int year) 
+{
+    //methode 1
+//     int previous=year;//1705
+//     year=year-((year/100)*100);//1705-(17*100)=5 so add 1 to 17 to get century
+//     (year==0)? year=(previous/100):year=(previous/100)+1;
+// return year ;
+
+//methode 2
+//1705%100==0 ? reminder(5) 17:17+1 
+return ( year%100 == 0)? year=(year/100):(year/100)+1;
+
+//methode 3
+//(2000+99)/100=20.01=20
+//2001+99/100=2100/100=21
+//(2900+99)/100=2999/100=29.99=29
+// return (year + 99) / 100;
+
+//methode 4
+//(1705/100)=ceil(17.05)=17+1
+//(1601/100)=ceil(16.01)=16+1
+//(2742/100)=ceil(27.45)=27+1
+//  return ceil(year / 100) ;
+
+// methode 5
+//(1705-1)/100  +1 (1704/100)  +1 =(17+1)
+//(2742-1)/100  +1 (2741/100)  +1 =(27+1)
+//(2000-1)/100  +1 (1999/100)  +1 =(19+1)
+return (year - 1) / 100 + 1;
+
+}
+
+int main() {
+    
+    cout<<centuryFromYear(1705)<<"\n";
+    cout<<centuryFromYear(1900)<<"\n";
+    cout<<centuryFromYear(1601)<<"\n";
+    cout<<centuryFromYear(2000)<<"\n";
+    cout<<centuryFromYear(2742)<<"\n\n";
+
+    cout<<centuryFromYear(1999)<<"\n";
+    cout<<centuryFromYear(2000)<<"\n";
+    cout<<centuryFromYear(2001)<<"\n";
+    cout<<centuryFromYear(2999)<<"\n";
+                    //     18
+                    // 19
+                    // 17
+                    // 20
+                    // 28
+                    // 20
+                    // 20
+                    // 21
+                    // 30
+    return 0;
+
+}
