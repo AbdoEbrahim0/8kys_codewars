@@ -1,1 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+#include <string>
+
+std::string boolean_to_string(bool b){
+  //Your code here
+  return (b==1) ? "true":"false";
+}
+int main() {
+
+     
+cout<<boolean_to_string(0);
+// cout<<even_or_odd(-21)<<"\n"; 
+// cout<<even_or_odd(-3)<<"\n"; 
+// cout<<even_or_odd(-12)<<"\n";
+
+    return 0;
+
+}
 
