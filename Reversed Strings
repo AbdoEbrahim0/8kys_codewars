@@ -1,1 +1,72 @@
 
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+string reverseString (string str )
+{
+  // your Code is Here ... enjoy !!!
+//   cout<< *str.begin();
+//methode 1 Time: 2272ms  2659ms
+        string str_2="";
+        //   int i=1;
+        //   while (true)
+        //   {
+        //     str_2=str_2+(*(str.end()-i));
+        //     ++i;
+        //    if (i==(str.size()+1)) break;
+        //   }
+        //     //  cout<<str_2<<endl;  
+        //   return str_2 ;
+
+  //methode 2  2371ms   2505ms 
+    //   for (int i=str.size()-1;i>=0;i--)
+    //   {
+    //     str_2=str_2+str[i];
+    //         //  cout<<str_2<<endl;  
+    //   }
+    //   return str_2;
+//methode 3
+    // reverse(str.begin(),str.end());
+    // return str;
+//methode 4
+//     string rev;
+//     for (int i = str.length() - 1; i >= 0; i--)
+//     {
+//         rev.push_back(str[i]);
+
+//     }
+//  cout<<rev<<endl;  
+//     return rev;
+//methode 5
+// w
+// ow
+// row
+// lrow
+// dlrow
+string rev;
+  for (char c: str)
+  {
+rev = c + rev;
+  cout<<rev<<endl; 
+  } 
+  return rev;
+}
+int main() {
+
+     
+reverseString("world"); 
+// cout<<even_or_odd(-21)<<"\n"; 
+// cout<<even_or_odd(-3)<<"\n"; 
+// cout<<even_or_odd(-12)<<"\n";
+
+    return 0;
+
+}
