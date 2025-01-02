@@ -26,12 +26,35 @@ using namespace std;
 //     return input;
 // }
     //methode 2
-vector<int> invert(vector<int> values)
-{
-    for(int i=0;i<values.size();i++)
-    values.at(i)=values.at(i)*-1;
-    return values;
-}
+// vector<int> invert(vector<int> values)
+// {
+//     for(int i=0;i<values.size();i++)
+//     values.at(i)=values.at(i)*-1;
+//     return values;
+// }
+    //method 3
+// int convert(int n){return n=n*-1;}
+// vector<int> invert(std::vector<int> values)
+// {
+//     transform(values.begin(), values.end(), values.begin(), convert);
+//     return values;
+// }
+    //method 4
+// vector<int> invert(std::vector<int> values) {
+//   for (int& v : values)
+//     v = v*-1;
+//   return values;
+// }
+//method 5
+// vector<int> invert(vector<int> values)
+// {
+//   vector<int> result;
+//       for (int i : values)
+//       {
+//         result.push_back(-i);
+//       }
+//   return result;
+// }
 int main() {
     //method 1
 // int arr[]={0};
@@ -42,12 +65,20 @@ int main() {
 //     cout<<arr[i]<<" ";
 // }
     //method 2
-    vector<int> vec={1, 2, 3, 4, 5};
-    vector<int> inverted_v;
-    inverted_v=invert(vec);
-    for(int val :inverted_v )
-    cout<<val <<" ";
-    return 0;
-
+    // vector<int> vec={1, 2, 3, 4, 5};
+    // vector<int> inverted_v;
+    // inverted_v=invert(vec);
+    // for(int val :inverted_v )
+    // cout<<val <<" ";
+    // return 0;
+    //method 3
+// vector<int> vec={1, 2, 3, 4, 5};
+//     ;
+//     for(int val :invert(vec) )
+//     cout<<val <<" ";
+    //method 4
+// vector<int> vec={1, 2, 3, 4, 5};
+//     ;
+//     for(int val :invert(vec) )
+//     cout<<val <<" ";
 }
-
