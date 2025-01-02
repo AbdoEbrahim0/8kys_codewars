@@ -1,1 +1,47 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+#include <string>
+
+int quarterOf(int month)
+{
+
+// double d=;
+// cout<<"d:"<<d<<endl;
+    //method 1
+    // return ceil((double)month/3);
+    //method 2
+    // return (month+2)/3;
+    //method 3
+    // int Q[] = {0,1,1,1,2,2,2,3,3,3,4,4,4};
+    // return Q[month];
+    //method 4
+    return month>=10 ? 4 : month>=7 ? 3 : month>=4 ? 2 : 1;
+}
+int main() {
+
+     
+cout<< quarterOf(1)<<endl;
+cout<< quarterOf(3)<<endl;
+cout<< quarterOf(4)<<endl;
+cout<< quarterOf(8)<<endl;
+
+
+// cout<< mango(3, 3)<<endl;
+// cout<< mango(5, 3)<<endl;
+// cout<< mango(9, 5)<<endl;
+// cout<< mango(12, 3)<<endl;
+
+
+    return 0;
+
+}
 
