@@ -1,1 +1,70 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+
+#include <string>
+#include <string>
+
+// string removeExclamationMarks(std::string str){
+//   //your code here
+    //method 1
+//   char c=str[0];
+//   int i=0;
+//   while (true)
+//   {
+//     if(str[i]=='!')
+//     {str[i]='\0';}
+//     if(str.length()-1 == i) break;
+//     ++i;
+//   }
+// return str;
+// }
+//method 2
+// string removeExclamationMarks(string str){
+//   //your code here
+//   string temp="";
+//   for(char c: str)
+//     if(c !='!')
+//     {temp=temp+c;}
+// return temp;
+// }
+//method 3
+// string removeExclamationMarks(std::string str){
+//     cout<<*remove(str.begin(), str.end(), '!')<<endl;
+//   str.erase(std::remove(str.begin(), str.end(), '!'), str.end());
+//   return str;
+// }
+//method 4
+// string removeExclamationMarks(std::string str){
+    
+//   return regex_replace(str,regex("!"),"");
+// }
+//method 5
+string removeExclamationMarks(std::string str){
+    for (auto it=str.begin();it<str.end();it++)
+    {
+        if(*it=='!')
+        {str.erase(it--);}   
+    }    
+    // cout<<"------\n";
+  return str;
+}
+int main() {
+
+string test="Hi! Hello!";
+// cout<<*test.erase(test.end()-3);
+cout<<removeExclamationMarks(test)<<endl;
+
+
+return 0;
+}
 
