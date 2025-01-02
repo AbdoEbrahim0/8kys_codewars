@@ -1,1 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+
+#include <string>
+#include <string>
+
+int min(vector<int> list){
+    int my_min=list.at(0);
+    for (int val : list)
+    {
+        if (val<my_min)
+        my_min=val;
+    }
+    return my_min;
+}
+
+// int max(vector<int> list){
+//     int my_max=list.at(0);
+//     for (int val : list)
+//     {
+//         if (val>my_max)
+//         my_max=val;
+//     }
+//     return my_max;    
+// }
+
+int max(vector<int> list){
+    return *max_element(list.begin(),list.end());   
+}
+
+int main() {
+   vector<int>vec= {-52, 56, 30, 29, -54, 0, -110};
+    // vector<int>vec={4,6,2,1,9,63,-134,566};
+    cout<<min(vec)<<" "<<max(vec)<<endl;
+
+return 0;
+}
 
