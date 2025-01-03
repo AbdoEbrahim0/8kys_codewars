@@ -1,1 +1,60 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+std::string to_alternating_case(const std::string& str)
+{
+//   string temp;
+//   cout<<int('a')<<endl;  cout<<int('z')<<endl; //97 122
+//   cout<<int('A')<<endl;cout<<int('Z')<<endl;//65 90
+//   int x;
+//   for (char c:str)
+//   {
+//     if(c>97-1 && c<=122)
+//     x=int(c)- (int('a')-int('A'));
+//     else if(c>65-1 && c<=90)
+//     x=int(c)+ (int('a')-int('A'));
+//     else
+//     {
+//         temp+=c; continue;
+//     }
+//      temp+=char(x);
+//   }
+// 	return temp;
+string newStr;
+  for (int i = 0; i < str.length(); i++) 
+  {
+    if (isupper(str[i])) 
+    {
+      newStr += tolower(str[i]);
+    } 
+    else if (islower(str[i]))
+    {
+      newStr += toupper(str[i]);
+    }
+    else 
+    {
+      newStr += str[i];
+    }
+  }
+	return newStr;
+}
+int main() {
+    string d="hello ";
+   cout<<to_alternating_case("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
 
