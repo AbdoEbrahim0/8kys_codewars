@@ -1,1 +1,39 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+std::string no_space(const std::string& x)
+{
+    //methode 1
+//     string temp;
+//     for (char c:x)
+//     {
+//         if(c!=' ')
+//         temp=temp+c;
+//     }
+//    return temp;
+ //methode 2
+// return regex_replace(x,regex(" "),"");
+    //methode 3
+    string result = x;
+    result.erase(remove(result.begin(), result.end(), ' '), result.end()); 
+  return result;
+}
+int main() {
+    string d="hello ";
+   cout<<no_space("8 j 8   mBliB8g  imjB8B8  jl  B")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
 
+return 0;
+}
