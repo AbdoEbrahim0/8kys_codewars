@@ -1,1 +1,24 @@
-
+import java.util.*;
+import java.util.stream.IntStream;
+public class Main {
+    public static int grow(int[] x){
+//methode 1
+//        int res=1;
+//        for(int val : x)
+//        {
+//            res=res*val;
+////            System.out.println(res);
+//        }
+//        return res;
+//methode 2 import java.util.stream.IntStream;
+//        return IntStream.of(x).reduce(1, (a, b) -> a * b);
+//methode 3 import java.util.*;
+        return Arrays.stream(x).reduce(1 ,(a, b) -> a * b);
+    }
+    public static void main(String[] args) {
+//        int my_arr[]={1,2,3};
+        int my_arr[]={2,2,2,2,2,2};
+        System.out.println(grow(my_arr));
+        System.out.println("Hello world!");
+    }
+}
