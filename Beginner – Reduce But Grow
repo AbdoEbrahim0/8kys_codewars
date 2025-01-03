@@ -1,24 +1,38 @@
-import java.util.*;
-import java.util.stream.IntStream;
-public class Main {
-    public static int grow(int[] x){
-//methode 1
-//        int res=1;
-//        for(int val : x)
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+
+int grow(std::vector<int> nums) {
+//   int res=1;
+//        for(int val : nums)
 //        {
 //            res=res*val;
-////            System.out.println(res);
 //        }
 //        return res;
-//methode 2 import java.util.stream.IntStream;
-//        return IntStream.of(x).reduce(1, (a, b) -> a * b);
-//methode 3 import java.util.*;
-        return Arrays.stream(x).reduce(1 ,(a, b) -> a * b);
-    }
-    public static void main(String[] args) {
-//        int my_arr[]={1,2,3};
-        int my_arr[]={2,2,2,2,2,2};
-        System.out.println(grow(my_arr));
-        System.out.println("Hello world!");
-    }
+//methode 2 #include <numeric> #include <functional>
+// return accumulate(nums.cbegin(), nums.cend(), 1, multiplies<int>());
+//methode 3 #include <numeric>
+// return reduce(nums.cbegin(),nums.cend(),1,multiplies{});
+//methode 4 #include <numeric>
+return accumulate(nums.begin(), nums.end(), 1, [](int a, int b) { return a * b; });
+}
+
+int main() {
+   vector<int>vec= {1,2,3};
+    // vector<int>vec={4,6,2,1,9,63,-134,566};
+    cout<<grow(vec)<<endl;
+    // cout<<litres(6.7)<<endl;
+    // cout<<litres(11.8)<<endl;
+return 0;
 }
