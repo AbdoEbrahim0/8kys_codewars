@@ -1,1 +1,95 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+
+int getRealDec(char c)
+{
+    return c-'0';
+}
+int power_10(int n)
+{
+    return pow(10,n);
+}
+int string_to_number(const std::string& s) {
+  //your code here
+  //methode 1
+//   return stoi(s);
+  //methode 2 
+    // int sizeOfString;
+    // int i; //if is negative start from index 1 if positive start from index 0 
+    // if(s[0]=='-')
+        // {
+        // i=1;
+        // sizeOfString=s.length()-1;
+        // }
+    // else
+        // {
+        // i=0;
+        // sizeOfString=s.length();
+        // }
+
+    // int res=0;
+    // for (i;i<=(sizeOfString+ i);i++)//handel if size is plussed one by '-' charcter
+        // {
+        // int real_dec_1=getRealDec(s[i]); 
+        // // cout<<real_dec_1<<"\n";
+        // real_dec_1=real_dec_1*power_10(--sizeOfString);
+        // res+=real_dec_1;
+        // }
+    // if (s[0]=='-') res=-res;
+    // return res;
+//methode 3
+  int x=1, ans=0;
+  if(s[0]=='-') x=-1;
+  for(int i=0; s[i]!='\0'; i++){
+    if (x==-1 && i==0) continue;
+    int d = s[i] - '0';
+    ans = ans*10 + d;
+  }
+  return ans*x;
+// cout<<"res: "<<res;
+// cout<<sizeOfString;
+
+// cout<<s[0]<<"\n";
+// cout<<int(s[0])<<"\n";
+// int real_dec_1=getRealDec(s[0]); //get real decimal num 3
+// real_dec_1=real_dec_1*power_10(--sizeOfString);//real_dec_1*(10^1)  
+// cout<<real_dec_1<<"\n";
+// cout<<"--------\n";
+// cout<<s[1]<<"\n";
+// cout<<int(s[1])<<"\n";
+// int real_dec_2=getRealDec(s[1]);
+// real_dec_2=real_dec_2*power_10(--sizeOfString);//real_dec_2*(10^0)
+// cout<<real_dec_2<<"\n"; //get real  decimal num 20
+// cout<<"--------\n";
+// int sum=0;
+// cout<<real_dec_1<<"\n";
+// cout<<real_dec_2<<"\n"; //get real  decimal num 20
+// sum=sum + real_dec_1 + real_dec_2;
+// cout<<"target sum"<<sum;
+// cout<<"\n--------\n";
+// cout<<pow(10,2)<<"\n";//100
+
+
+     
+}
+
+int main() {
+   cout<<string_to_number("123456")<<"\n";
+    cout<<string_to_number("-1000")<<"\n";
+    cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
 
