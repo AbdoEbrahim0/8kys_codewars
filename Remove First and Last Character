@@ -1,1 +1,53 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+string sliceString (string str )
+{
+  // your code is here ... Hope You Enjoy !!
+//methode 1
+//   string sliced="";
+//   for(int i=1;i<str.size()-1;i++)
+//   {
+//     sliced+=str[i];
+//   }
+//   return sliced ;
+// str.end();
+
+//methode 2
+// return str.substr(1,str.length()-2);
+
+// str.erase(0, 1);
+// str.erase(str.length()-1, 1);
+// return str;
+
+// return string(str.begin()+1,str.end()-1) ;
+  
+//   str.erase(str.begin());
+//   str.erase(str.length() - 1);
+//   return str ;
+
+  int n = str.size();
+  str.replace(n-1,1,"");
+  str.replace(0,1,"");
+  return str;
+}
+
+int main() {
+   cout<<sliceString("123456")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
 
