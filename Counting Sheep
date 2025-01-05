@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+int count_sheep(vector<bool> arr) 
+{
+ int s=arr.size();
+ int countT=0;
+ for(bool val:arr)
+ {
+if (val==true) countT++;
+ } 
+ return countT;
+}
+int main() {
+
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
