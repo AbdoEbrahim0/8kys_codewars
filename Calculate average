@@ -1,0 +1,34 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+double calcAverage(const std::vector<int>& values){
+  double sum,s=values.size();
+
+  for (int i=0;i<s;i++)
+  {
+    sum+=values.at(i);
+  }
+  return sum/s;
+}
+int main() {
+
+vector<int>vec={2,5};
+    cout<<calcAverage(vec)<<"\n";
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
