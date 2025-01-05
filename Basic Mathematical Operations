@@ -1,1 +1,44 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+int basicOp(char op, int val1, int val2) {
+  
+  switch (op)
+  {
+  case '+':
+    return val1+val2;
+    break;
+  case '-':
+    return val1-val2;
+    break;
+  case '*':
+    return val1*+val2;
+    break;
+  case '/':
+    return val1/val2;
+    break;
 
+  // default:
+  //   break;
+  }
+}
+int main() {
+
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
