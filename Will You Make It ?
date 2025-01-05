@@ -1,1 +1,28 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+bool zero_fuel(uint32_t distance_to_pump, uint32_t mpg, uint32_t fuel_left)
+{
+  
+  return (mpg*fuel_left >= distance_to_pump);
+}
+int main() {
+  //   string d="hello ";
+  //  cout<<to_alternating_case("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
 
