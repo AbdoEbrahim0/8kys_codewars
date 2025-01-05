@@ -1,1 +1,39 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+bool is_uppercase(const std::string &s) {
+  bool check=true;
+  for (char c :s)
+    {
+     if ((int(c)>=int('a') && int(c)<=int('z')))
+    {
+            if (!(int(c)>=int('A') && int(c)<=int('Z')))
+        {
+          check=false;
+          return check; // equal break effect
+        }
+    }
+    }
+  return check; // TODO
+}
+int main() {
+
+  string d="hello ";
+    cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
 
