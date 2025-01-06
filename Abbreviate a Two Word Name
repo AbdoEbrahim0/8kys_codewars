@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <map>
 #include <numeric>
+#include<sstream>
 using namespace std;
     //method 1:
 // std::string abbrevName(std::string name)
@@ -35,34 +36,57 @@ using namespace std;
 //   return res ;
 // }
     //methode 2:
-    std::string abbrevName(std::string name)
-{
-  string s;
-  s.push_back(toupper(name[0]));
-  s.push_back('.');
-  for (int i=0;i<name.size();i++)
-  {
-    if (name[i]==' ')
-    {
-    s.push_back(toupper(name[i+1]));
-    break;
-    }
-  }
-  return s ;
-}
-
+//     std::string abbrevName(std::string name)
+// {
+//   string s;
+//   s.push_back(toupper(name[0]));
+//   s.push_back('.');
+//   s.push_back(toupper(name[name.find(' ') + 1 ] ));
+//   return s ;
+// }
     //methode 3:
-    std::string abbrevName(std::string name)
+string abbrevName(string str)
 {
-  string s;
-  s.push_back(toupper(name[0]));
-  s.push_back('.');
-  s.push_back(toupper(name[name.find(' ') + 1 ] ));
-  return s ;
+  string first_name, last_name;
+  stringstream name,res;
+  name<<str;
+  name >> first_name >> last_name;
+  cout<<name.str()<<endl;
+  res << (char)toupper(first_name[0]) << "." << (char)toupper(last_name[0]);
+  return res.str();
 }
+    //methode 4:
+//     std::string abbrevName(std::string name)
+// {
+//   std::string abbrev="A.A";
+//   abbrev[0]=name[0];
+//   int cnt=0;
+// while (name[cnt]!=' ') cnt++;
+//   abbrev[2]=name[++cnt];
+//   // cout<<"abbrev[2]"<<abbrev[2]<<"\n";
+//   // cout<<"abbrev[0]"<<abbrev[0]<<"\n";
+//   //all i care is small charcters if -small- then do operation if -capital- return it without change
+//   if (abbrev[0]>'A') abbrev[0]-=0x20; //S>A ? then true then do operation  S>Z ? then false do NOT do operation 
+//   if (abbrev[2]>'A') abbrev[2]-=0x20;
+//   return abbrev;
+// }
 int main() {
-cout<<abbrevName("abdo magdy")<<"\n";
+// cout<<abbrevName("abdo magdy")<<"\n";
+std::string data = "John,25,Developer";
+std::stringstream ss(data);
+std::string name, age, job;
+ss>>name>>age>>job;
+// std::getline(ss, name, ',');
+// std::getline(ss, age, ',');
+// std::getline(ss, job, ',');
 
+std::cout << "Name: " << name << ", Age: " << age << ", Job: " << job << std::endl;
+// Output: Name: John, Age: 25, Job: Developer
+
+// cout<<0x20<<endl;
+// cout<<'S'<<int ('S')<<endl;
+// cout<<'Z'<<int ('Z')<<endl;
+// cout<<int ('a')-int ('A')<<endl;
 // vector<int>vec={2,5};
 // cout<<between(1,5)<<"\n";    
   // string d="hello ";
