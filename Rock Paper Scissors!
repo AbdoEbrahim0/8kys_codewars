@@ -1,0 +1,44 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+using namespace std;
+std::string rps(const std::string& p1, const std::string& p2)
+{
+  //"scissors" "paper" "rock"
+  string result ="Player 1 won!";
+  if (p1==p2) return"Draw!";
+  map <string,string>my_map= { {"rock","scissors"} ,{"scissors","paper"} , {"paper","rock"}};
+    for (auto val :my_map)
+    {
+      if(p1==val.first)
+      {
+        if(p2!=val.second)
+        return "Player 2 won!";
+      }
+    }
+    return result;
+}
+int main() {
+
+// vector<int>vec={2,5};
+    cout<<rps("scissors", "rock")<<"\n";
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
