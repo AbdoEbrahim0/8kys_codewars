@@ -1,0 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+using namespace std;
+
+std::string abbrevName(std::string name)
+{
+  char firstName=toupper(name[0]) ;
+  char lastName;
+  string res="";
+  res+=firstName;
+  res+=".";
+  for (int i=0;i<name.size();i++)
+  {
+    if (name[i]==' ')
+    {
+    res+=toupper(name[i+1]);
+    break;
+    }
+  }
+  return res ;
+}
+int main() {
+cout<<abbrevName("abdo magdy")<<"\n";
+
+// vector<int>vec={2,5};
+// cout<<between(1,5)<<"\n";    
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
