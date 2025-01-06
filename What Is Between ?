@@ -1,0 +1,49 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+using namespace std;
+//methode 1
+// vector<int> between(int start, int end) {
+//   // your code here
+//   vector<int>vec;
+//   while (start<=end )
+//   {
+//     vec.push_back(start);
+//     // cout<<start;
+//     start++;
+//   }
+//   return vec;
+// }
+//methode 2
+vector<int> between(int start, int end) {
+  // your code here
+  vector<int>vec(end-start+1);
+  iota(vec.begin(),vec.end(),start); //iota greek word
+  return vec;
+}
+
+int main() {
+between(1,5);
+// vector<int>vec={2,5};
+    // cout<<between(1,5)<<"\n";
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
