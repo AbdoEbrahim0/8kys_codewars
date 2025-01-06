@@ -16,23 +16,39 @@
 #include <map>
 #include <numeric>
 using namespace std;
-
-std::string abbrevName(std::string name)
+    //method 1:
+// std::string abbrevName(std::string name)
+// {
+//   char firstName=toupper(name[0]) ;
+//   char lastName;
+//   string res="";
+//   res+=firstName;
+//   res+=".";
+//   for (int i=0;i<name.size();i++)
+//   {
+//     if (name[i]==' ')
+//     {
+//     res+=toupper(name[i+1]);
+//     break;
+//     }
+//   }
+//   return res ;
+// }
+    //methode 2:
+    std::string abbrevName(std::string name)
 {
-  char firstName=toupper(name[0]) ;
-  char lastName;
-  string res="";
-  res+=firstName;
-  res+=".";
+  string s;
+  s.push_back(toupper(name[0]));
+  s.push_back('.');
   for (int i=0;i<name.size();i++)
   {
     if (name[i]==' ')
     {
-    res+=toupper(name[i+1]);
+    s.push_back(toupper(name[i+1]));
     break;
     }
   }
-  return res ;
+  return s ;
 }
 int main() {
 cout<<abbrevName("abdo magdy")<<"\n";
