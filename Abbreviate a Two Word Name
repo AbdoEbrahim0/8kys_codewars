@@ -50,6 +50,16 @@ using namespace std;
   }
   return s ;
 }
+
+    //methode 3:
+    std::string abbrevName(std::string name)
+{
+  string s;
+  s.push_back(toupper(name[0]));
+  s.push_back('.');
+  s.push_back(toupper(name[name.find(' ') + 1 ] ));
+  return s ;
+}
 int main() {
 cout<<abbrevName("abdo magdy")<<"\n";
 
