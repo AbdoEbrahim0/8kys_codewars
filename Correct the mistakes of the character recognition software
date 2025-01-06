@@ -1,0 +1,88 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+using namespace std;
+std::string correct(std::string str){
+  //your code here
+  //mthode 1
+  // string  res="";
+  // for (char v: str)
+  // {
+  //   switch (v)
+  //   {
+  //   case '1':
+  //     res+='I';
+  //     break;
+  //   case '5':
+  //   res+='S';
+  //     break;
+  //   case '0':
+  //   res+='O';
+  //     break;  
+  //   default:
+  //   res+=toupper(v);
+  //     break;
+  //   }
+  // }
+  // return res;
+
+  //methode 2 
+  // replace(str.begin(), str.end(), '5', 'S');
+  // replace(str.begin(), str.end(), '0', 'O');
+  // replace(str.begin(), str.end(), '1', 'I');
+  // return str;
+  //methode 3
+  // map<char, char> corrections{ {'5', 'S'}, {'0', 'O'}, {'1', 'I'} };
+  // for (auto& c:str)
+  // {
+  //   for (auto cc:corrections)
+  //   {
+  //     if (c==cc.first)
+  //     c=cc.second;
+  //   }
+  // }
+  // return str;
+  //methode 4
+  // map<char ,char>my_map = { {'5','S'} , {'0','O'} ,{'1','I'}};
+  
+  // for (auto &c :my_map) //can not use char& c
+  // {
+  //   replace(str.begin(),str.end(),c.first,c.second);
+  // }
+  // return str;
+  //methode 5
+  // str=regex_replace(str,regex("[5]"),"S");
+  // str=regex_replace(str,regex("[0]"),"O");
+  // str=regex_replace(str,regex("[1]"),"I"); //dont use "1" use  "[1]
+  // return str;
+  //method 6
+  char errors[] = "S5O0I1";
+  for (int i = 0; i < sizeof(errors) - 1; i += 2)
+    std::replace(str.begin(), str.end(), errors[i + 1], errors[i]);
+  return str;
+}
+
+int main() {
+
+// vector<int>vec={2,5};
+    cout<<correct("1F-RUDYARD K1PL1NG")<<"\n";
+  // string d="hello ";
+  //   cout<<is_uppercase("HELLO WORLD")<<"\n";
+    // cout<<string_to_number("-1000")<<"\n";
+    // cout<<string_to_number("-321405")<<"\n";
+
+return 0;
+}
