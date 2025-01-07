@@ -1,0 +1,15 @@
+bool lovefunc(int f1, int f2) {
+  return (f1+f2)%2 ==1;
+}
+//methode 2: bitwise operator
+bool lovefunc(int f1, int f2) {
+  return (f1 ^ f2) & 1;
+}
+//methode 3: bitwise operator
+bool lovefunc(int f1, int f2) {
+  return (f1%2)^(f2%2);
+}
+//methode 4:
+bool lovefunc(int f1, int f2) {
+  return f1%2? !(f2%2): f2%2;
+} 
