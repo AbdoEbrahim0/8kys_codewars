@@ -1,0 +1,96 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+using namespace std;
+    //method 1:
+// std::string makeUpperCase (  std::string& input_str)
+// {
+//   for ( char &c :input_str)
+//   if (c>'Z') c-=32;
+//   return input_str;
+// }
+    //method 2:
+// std::string makeUpperCase (  std::string input_str)
+// {
+//   for ( char &c :input_str)
+//   if (c>'Z') c-=32;
+//   return input_str;
+// }
+    //methode 3:
+//  std::string makeUpperCase ( const std::string& input_str)
+// {
+//    std::string result = input_str; // Create a modifiable copy of the string
+//   // for (char  &c :input_str) //qualifiers dropped in binding reference of type "char &" to initializer of type "const std::_String_const_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Scary_val>::value_type" (aka "const char")
+//   for (char  &c :result) // correct way by create modifible string
+//   if (c>'Z') c-=32;
+//   return result;
+// }
+    //methode 4:
+// std::string makeUpperCase (const std::string& input_str)
+// {
+//   string ModifiableString=input_str;
+//   char c;
+//   for (int i=0;i<input_str.size();i++)
+//   {
+//     if (input_str[i]>='a' && input_str[i]<='z') ModifiableString[i]-=32;
+//   }
+//   return ModifiableString;
+// }
+     //method 5:
+// std::string makeUpperCase (const std::string& input_str)
+// {
+//   string  str="";
+//   for (char c : input_str)
+//   {
+//     if (c>='a' && c<='z') c=c- (  int('a')-int('A') );
+//     str+=c;
+//   }
+//   return str;
+// }
+    //method 6:
+// std::string makeUpperCase (const std::string& input_str)
+// {
+
+//   string myModfbl=input_str;
+//   transform(myModfbl.begin(),myModfbl.end(),myModfbl.begin(),::toupper);
+//   return myModfbl;
+// }
+  //method 7:
+std::string makeUpperCase (const std::string& input_str)
+{
+  string myModfbl;
+  //for efficency need  we can specify size to avoid multible memory allocation
+  //https://github.com/AbdoEbrahim0/8kys_codewars/blob/main/getPerformanceOfCode.cpp
+  myModfbl.reserve(input_str.size()); // Reserve memory for efficiency
+  for(auto &ch :input_str)
+  {
+    myModfbl.push_back(toupper(ch));
+  }
+  return myModfbl;
+}
+int main() {
+  //methode 1:
+//   string x ="abdo magdy";
+//  cout<<makeUpperCase(x)<<"\n";
+ //methode 2 and  3 and 4 and 5::
+ cout<<makeUpperCase("abdo magdy")<<"\n";
+// vector<int>vec={2,5};
+// cout<<between(1,5)<<"\n";    
+
+return 0;
+}
