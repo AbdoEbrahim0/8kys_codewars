@@ -1,40 +1,87 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
 #include <string>
-
-std::string switch_it_up(int number){
-  if (number >=0 && number<10)
-  switch (number)
-  {
-    case 0:
-    return "Zero";
-    break;
-  case 1:
-    return "One";
-    break;
-  case 2:
-    return "Two";
-    break;
-  case 3:
-    return "Three";
-    break;
-  case 4:
-    return "Four";
-    break;
-  case 5:
-    return "Five";
-    break;
-  case 6:
-    return "Six";
-    break;
-  case 7:
-    return "Seven";
-    break;
-  case 8:
-    return "Eight";
-    break;
-  case 9:
-    return "Nine";
-    break;
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+using namespace std;
+    //method 1:
+// std::string switch_it_up(int number){
+//   if (number >=0 && number<10)
+//   switch (number)
+//   {
+//     case 0:
+//     return "Zero";
+//     break;
+//   case 1:
+//     return "One";
+//     break;
+//   case 2:
+//     return "Two";
+//     break;
+//   case 3:
+//     return "Three";
+//     break;
+//   case 4:
+//     return "Four";
+//     break;
+//   case 5:
+//     return "Five";
+//     break;
+//   case 6:
+//     return "Six";
+//     break;
+//   case 7:
+//     return "Seven";
+//     break;
+//   case 8:
+//     return "Eight";
+//     break;
+//   case 9:
+//     return "Nine";
+//     break;
   
-  }
-  return "Only numbers range is 0-9 ";
+//   }
+//   return "Only numbers range is 0-9 ";
+// }
+
+//method 2:
+// std::string switch_it_up(int number){
+// string arr[10]={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+// if (number>=0 && number<10)
+// return arr[number];
+// return "Only numbers range is 0-9 ";
+// }
+//method 3:
+std::string switch_it_up(int number){
+map <int ,string >myMap ={{0,"Zero"},{1,"One"},{2,"Two"},{3,"Three"},{4,"Four"},{5,"Five"},{6,"six"},{7,"Seven"},{8,"Eight"},{9,"Nine"}};
+if (number>=0 && number<10)
+return (myMap [number]);
+return "Only numbers range is 0-9 ";
+}
+
+//method 4:
+int main() {
+  //methode 1:
+//   string x ="abdo magdy";
+//  cout<<makeUpperCase(x)<<"\n";
+ //methode 2 and  3 and 4 and 5::
+ 
+ cout<<switch_it_up(10)<<"\n";
+// vector<int>vec={2,5};
+// cout<<between(1,5)<<"\n";    
+
+return 0;
 }
