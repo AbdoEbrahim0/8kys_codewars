@@ -1,24 +1,141 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+using namespace std;
+    //method 1:
+// int sumOfDifferences(const std::vector<int>& arr){
+//   //your code here
+//   int in_size=arr.size(),sum=0;
+//   if  (in_size<=1) return 0;
+//   vector<int>modifiable=arr;
+//   vector<int>sortedVec;
+//   modifiable.reserve(in_size);
+//   int Max_index;
+//     while(!modifiable.empty())
+//   {
+//     int max=modifiable.at(0);
+//     Max_index=0;
+//     for(int i =0;i<modifiable.size();i++)
+//     {
+//       if(modifiable.at(i)>max) {
+//         max=modifiable.at(i);
+//         Max_index=i;
+//       } 
+//     }
+//     sortedVec.push_back(max);
+//     modifiable.erase(modifiable.begin()+Max_index);
+//   }
+//   for (int j=0;j<sortedVec.size()-1;j++)
+//   {
+//     sum=sum+(sortedVec.at(j)-sortedVec.at(j+1));
+//   } 
+// return sum;
+// }
+    //method 2:
+// int sumOfDifferences(const std::vector<int>& arr){
+//   //your code here
+//   int in_size=arr.size(),sum=0;
+//   if  (in_size<=1) return 0;
+//   vector<int>modifiable=arr;
+//   // modifiable.reserve(in_size);
+//   sort(modifiable.begin(), modifiable.end(), std::greater<int>());
+//   for (int j=0;j<modifiable.size()-1;j++)
+//   {
+//     sum=sum+(modifiable.at(j)-modifiable.at(j+1));
+//   } 
+// return sum;
+// }
+
+    //method 3:
+// int sumOfDifferences(const std::vector<int>& arr){
+//   //your code here
+//   int in_size=arr.size(),sum=0;
+//   if  (in_size<=1) return 0;
+//   vector<int>modifiable=arr;
+//   modifiable.reserve(in_size);
+//   for (int i=0;i<in_size-1;i++)
+//   {
+//     for (int j=i+1;j<in_size;j++)
+//     {
+//       if (modifiable.at(j)>modifiable.at(i))
+//       swap(modifiable.at(i),modifiable.at(j));
+//     }
+//   }
+//   // for(int val:modifiable)
+//   // {
+//   //   cout<<val<<" ";
+//   // }
+//   for (int j=0;j<modifiable.size()-1;j++)
+//   {
+//     sum=sum+(modifiable.at(j)-modifiable.at(j+1));
+//   } 
+// return sum;
+// }
+    //method 4:
+// int sumOfDifferences(const std::vector<int>& arr) {
+//   if (arr.empty()) return 0;
+//   auto p = std::minmax_element(arr.cbegin(), arr.cend());
+//   return *p.second - *p.first;
+// }
+    //method 5:
+// int sumOfDifferences(std::vector<int> arr){
+//   if(arr.size() <= 1) { return 0; }
+//   std::sort(arr.begin(), arr.end());
+//   std::adjacent_difference(arr.begin(), arr.end(), arr.begin());
+//   // front() is not an adjacent difference
+//   return std::accumulate(std::next(arr.begin(), 1), arr.end(), 0);
+// }
+    //method 6:
+// int sumOfDifferences(vector<int> arr){
+//   int sum = 0;
+//     sort(arr.rbegin(), arr.rend());
+//     if (arr.size() <= 1)
+//         sum = 0;
+//     else
+//         for (int i = 0; i < arr.size() - 1; i++) {
+//             sum += arr[i] - arr[i + 1];
+//         }
+//     return sum;
+
+// }
+
+//methode 7:
 int sumOfDifferences(const std::vector<int>& arr){
-  //your code here
-  int in_size=arr.size(),sum=0;
-  if  (in_size<=1) return 0;
-  vector<int>modifiable=arr;
-  modifiable.reserve(in_size);
-  for (int i=0;i<in_size-1;i++)
-  {
-    for (int j=i+1;j<in_size;j++)
-    {
-      if (modifiable.at(j)>modifiable.at(i))
-      swap(modifiable.at(i),modifiable.at(j));
-    }
-  }
-  // for(int val:modifiable)
-  // {
-  //   cout<<val<<" ";
-  // }
-  for (int j=0;j<modifiable.size()-1;j++)
-  {
-    sum=sum+(modifiable.at(j)-modifiable.at(j+1));
-  } 
-return sum;
+  if (arr.size() < 2) return 0;  
+  
+  std::vector<int> b = arr; 
+  std::vector<int> c;
+  sort(b.begin(), b.end(), std::greater <>());
+  
+  for (int i = 0; i < b.size() - 1; i++)
+    c.push_back(b[i] - b[i + 1]);
+  
+  return std::accumulate(c.begin(), c.end(), 0);
+}
+int main() {
+  //methode 1:
+//   string x ="abdo magdy";
+//  cout<<makeUpperCase(x)<<"\n";
+ //methode 2 and  3 and 4 and 5::
+ 
+//  cout<<switch_it_up(10)<<"\n";
+vector<int>vec={2,1,10};
+cout<<sumOfDifferences(vec)<<"\n";    
+
+return 0;
 }
