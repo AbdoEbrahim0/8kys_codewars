@@ -1,0 +1,51 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+using namespace std;
+    //method 1:
+// bool check(const std::vector<std::string>& seq, const std::string& elem) {
+//     for (string s:seq )
+//     {
+//       if (elem ==s) return true;
+//     }
+//     return false;
+// }
+//method 2:
+// bool check(const std::vector<std::string>& seq, const std::string& elem) {
+//     // cout<< 
+//     return find(seq.begin(),seq.end(),elem) !=seq.end();;
+// }
+//method 3:
+bool check(const std::vector<std::string>& seq, const std::string& elem) {
+    return std::any_of(seq.begin(), seq.end(), [&elem](const auto &str){return str == elem;});
+}
+//method 4:
+
+//method 4:
+int main() {
+  //methode 1:
+//   string x ="abdo magdy";
+//  cout<<makeUpperCase(x)<<"\n";
+ //methode 2 and  3 and 4 and 5::
+ 
+ cout<<check({"c", "b", "a"},  "a")<<"\n";
+// vector<int>vec={2,5};
+// cout<<between(1,5)<<"\n";    
+
+return 0;
+}
