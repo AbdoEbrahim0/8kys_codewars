@@ -1,5 +1,6 @@
 #include <vector>
 using namespace std;
+/*
 std::vector<int> MonkeyCount(int n) {
   vector<int> vec;
   for (int i=1;i<=n;i++)
@@ -7,4 +8,10 @@ std::vector<int> MonkeyCount(int n) {
     vec.push_back(i);
   }
   return vec;
+}
+*/
+std::vector<int> MonkeyCount(int n) {
+  std::vector<int> res(n);
+  std::iota(res.begin(), res.end(), 1);
+  return res;
 }
