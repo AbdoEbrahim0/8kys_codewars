@@ -18,8 +18,8 @@
 #include<sstream>
 
 using namespace std;
-    //method 1:
-    
+//method 1:
+
 // std::string countSheep(int number) {
 //   string s="";
 //   //start from 1 =49 (hexa)
@@ -29,47 +29,59 @@ using namespace std;
 // return s;
 // }
     // method 2:
-std::string countSheep(int number) {
-  string s ;
-  stringstream ss;
-  //start from 1 =49 (hexa)
-  for (int i=1;i<=number;i++)
-  {
-    ss<<i;
-  s+= ss.str() + " sheep...";
-  ss.str("");
-  }
-return s;
-}
-    //method 3:
 // std::string countSheep(int number) {
-//   char s[]={""} ;
-//   string out;
-//     for (int i=1;i<=number;i++)
+//     string s;
+//     stringstream ss;
+//     //start from 1 =49 (hexa)
+//     for (int i = 1; i <= number; i++)
 //     {
-//     // out+=i;
-//     out+= " sheep...";
+//         ss << i;
+//         s += ss.str() + " sheep...";
+//         ss.str("");
 //     }
-
-// return out;
+//     return s;
 // }
-
+    //method 3:
+//method 3:
+  std::string countSheep(int number) {   
+      string out = "";
+      for (int k = 1; k <= number; k++)
+      {
+          int temp_n = k;
+          int tenTimes = 0;
+          while (temp_n >= 10)
+          {
+              temp_n = temp_n / 10;
+              tenTimes++;
+          }
+          //cout << "tenTimes : " << tenTimes << "\n";
+          //cout << "num is : " << k << endl;
+          string str = "";
+          int numOfDigits = tenTimes;
+          int temp_k = k;
+          for (int j = 0; j <= numOfDigits; j++)
+          {
+              int digit = floor(temp_k / pow(10, tenTimes));//302/100=3       // 2/100=0.02=0   // 2/100=
+              str += char(digit + 48);
+              temp_k = temp_k - (pow(10, tenTimes--)) * digit; //302-100*3=02     //2-100*0=2
+          }
+          out = out + str + " sheep...";
+      }
+      cout << out << endl;
+  return out;
+  }
 int main() {
-//  cout<<int('1')<<"\n";
-//  cout<<char(49)<<"\n";
-//  cout<<int('2')<<"\n";
-//  cout<<char(50)<<"\n";
-//  cout<<int('10')<<"\n";
+    //  cout<<int('1')<<"\n";
+    //  cout<<char(49)<<"\n";
+    //  cout<<int('2')<<"\n";
+    //  cout<<char(50)<<"\n";
+  cout<<countSheep(50)<<"\n";    
 
-//  cout<<char(12592)<<"\n";
-cout<<countSheep(3)<<"\n"; 
-  // int arr[]={1, 2, 3}, arr2[]={4, 5, 6};
-  //methode 1:
- 
-//  cout<<char(50+1)<<"\n";
- 
-// vector<int>vec={1, 2, 3},vec2={4, 5, 6};
-    
+    // vector<int>vec={1, 2, 3},vec2={4, 5, 6};
+      // int arr[]={1, 2, 3}, arr2[]={4, 5, 6};
 
-return 0;
+
+
+
+    return 0;
 }
