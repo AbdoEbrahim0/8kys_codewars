@@ -42,6 +42,14 @@ using namespace std;
 //     return s;
 // }
     //method 3:
+std::string countSheep(int number) {
+  std::stringstream return_string;
+  for (size_t i = 1; i <= number; ++i) {
+    return_string << i << " sheep...";
+  }
+  return return_string.str();
+}
+    //method 4:
 //i test on 302 as input to convert to word
 /*
 ----- number is 3 digit
@@ -56,41 +64,61 @@ using namespace std;
 2/1=2      //call it digit and push 
 2-1*0=2     // end loop 
 */
-int tenPowerFn(int n) //to get 10^?  ? refer to tenpower
-{
-  int tenPower=0;
-    while (n>=10)
-  {
-    n=n/10;
-    tenPower++;
-  }
-return tenPower;
-}
-string convertToString(int ntoConvert)
-{
-  string out="";
-  int temp_n=ntoConvert;
-  int tenPower=tenPowerFn(ntoConvert);
-  int numOfDigits=tenPower;
-    for (int i=0; i<=numOfDigits;i++)
-    {
-      int digit =temp_n/floor( (pow(10,tenPower)));//302/100=3  //2/10=0.2=0  //2/1=2
-      out+=char(digit+48);                          // '3'      //'0'         //'2'
-      temp_n=temp_n-floor(pow(10,tenPower--)) *digit;         //302-100*3=2  //2-10*0=2
+// int tenPowerFn(int n) //to get 10^?  ? refer to tenpower
+// {
+//   int tenPower=0;
+//     while (n>=10)
+//   {
+//     n=n/10;
+//     tenPower++;
+//   }
+// return tenPower;
+// }
+// string convertToString(int ntoConvert)
+// {
+//   string out="";
+//   int temp_n=ntoConvert;
+//   int tenPower=tenPowerFn(ntoConvert);
+//   int numOfDigits=tenPower;
+//     for (int i=0; i<=numOfDigits;i++)
+//     {
+//       int digit =temp_n/floor( (pow(10,tenPower)));//302/100=3  //2/10=0.2=0  //2/1=2
+//       out+=char(digit+48);                          // '3'      //'0'         //'2'
+//       temp_n=temp_n-floor(pow(10,tenPower--)) *digit;         //302-100*3=2  //2-10*0=2
+//     }
+//   return out;
+// }
+// string countSheep(int number)
+// {
+//   string str="";
+//   for (int j=1;j<=number;j++)
+//   {
+//       str=str + convertToString(j)+" sheep...";
+//   }
+// return str;
+// }
+
+  //method 5:
+string countSheep(int number) {
+  string message="";              //We created our string, where a message would be stored. 
+  for(int n=1;n<=number; n++){    //Next, I created the function "for" to count sheep.
+    if(n<10){                     //We should test if our number is more significant than ten or not because if it`s, we should divide the amount into two parts: tens and ones.
+      char z = 48 + n;            //To create string number, we should transfer integer into char.
+       message = message + z +" sheep...";    //We count sheep and add our message to our storage.
+    } else {                                  //This part is more complicated because we divide the number into two sections.
+        char ones = 48 + n % 10;              //Count for ones if num is 30  48+30%10= 48+0=48='0'
+        cout<<"ones"<<ones<<"\n";
+        char decimal=48+(-n%10+n)/10;         //Count for decimals  48+(-30%10+30)/10  =48+30/10 =51= '3'
+        cout<<"decimal"<<decimal<<"\n";
+        message = message + decimal + ones +" sheep..."; //Add text to our storage.
+      }
     }
-  return out;
-}
-string countSheep(int number)
-{
-  string str="";
-  for (int j=1;j<=number;j++)
-  {
-      str=str + convertToString(j)+" sheep...";
-  }
-return str;
+  return message; //Return our work! =)
 }
 
+
 int main() {
-  cout<<countSheep(50)<<"\n";    
+  // cout<<countSheep(20)<<"\n";    
+  cout<<(-30%10+30) /10;
    return 0;
 }
