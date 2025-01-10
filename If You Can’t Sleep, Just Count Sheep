@@ -42,46 +42,55 @@ using namespace std;
 //     return s;
 // }
     //method 3:
-//method 3:
-  std::string countSheep(int number) {   
-      string out = "";
-      for (int k = 1; k <= number; k++)
-      {
-          int temp_n = k;
-          int tenTimes = 0;
-          while (temp_n >= 10)
-          {
-              temp_n = temp_n / 10;
-              tenTimes++;
-          }
-          //cout << "tenTimes : " << tenTimes << "\n";
-          //cout << "num is : " << k << endl;
-          string str = "";
-          int numOfDigits = tenTimes;
-          int temp_k = k;
-          for (int j = 0; j <= numOfDigits; j++)
-          {
-              int digit = floor(temp_k / pow(10, tenTimes));//302/100=3       // 2/100=0.02=0   // 2/100=
-              str += char(digit + 48);
-              temp_k = temp_k - (pow(10, tenTimes--)) * digit; //302-100*3=02     //2-100*0=2
-          }
-          out = out + str + " sheep...";
-      }
-      cout << out << endl;
-  return out;
+//i test on 302 as input to convert to word
+/*
+----- number is 3 digit
+302/(10^2)=302/100=3.02=3  //call it digit and push 
+302-(10^2)*3=302-100*3=02 =2
+----- now num is 2 digit --------- so decrement >> 10^(?-1)
+
+2/10=0.2=0 //call it digit and push 
+2-10*0=2 
+----- now num is 1 digit --------- so decrement >> 10^(?-1)
+
+2/1=2      //call it digit and push 
+2-1*0=2     // end loop 
+*/
+int tenPowerFn(int n) //to get 10^?  ? refer to tenpower
+{
+  int tenPower=0;
+    while (n>=10)
+  {
+    n=n/10;
+    tenPower++;
   }
+return tenPower;
+}
+string convertToString(int ntoConvert)
+{
+  string out="";
+  int temp_n=ntoConvert;
+  int tenPower=tenPowerFn(ntoConvert);
+  int numOfDigits=tenPower;
+    for (int i=0; i<=numOfDigits;i++)
+    {
+      int digit =temp_n/floor( (pow(10,tenPower)));//302/100=3  //2/10=0.2=0  //2/1=2
+      out+=char(digit+48);                          // '3'      //'0'         //'2'
+      temp_n=temp_n-floor(pow(10,tenPower--)) *digit;         //302-100*3=2  //2-10*0=2
+    }
+  return out;
+}
+string countSheep(int number)
+{
+  string str="";
+  for (int j=1;j<=number;j++)
+  {
+      str=str + convertToString(j)+" sheep...";
+  }
+return str;
+}
+
 int main() {
-    //  cout<<int('1')<<"\n";
-    //  cout<<char(49)<<"\n";
-    //  cout<<int('2')<<"\n";
-    //  cout<<char(50)<<"\n";
   cout<<countSheep(50)<<"\n";    
-
-    // vector<int>vec={1, 2, 3},vec2={4, 5, 6};
-      // int arr[]={1, 2, 3}, arr2[]={4, 5, 6};
-
-
-
-
-    return 0;
+   return 0;
 }
