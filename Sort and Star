@@ -1,0 +1,79 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+using namespace std;
+    //method 1:
+// std::string twoSort(std::vector<std::string> s)
+// {
+//   set<string >my_set;
+//   for (string val :s)
+//   {
+//       my_set.insert(val);
+//   }
+//   string first_element,formatted_s="";
+//   first_element= *my_set.begin();
+//   int i;
+//   for ( i=0 ;i<first_element.length()-1;i++)
+//   {
+//     formatted_s+=first_element[i];
+//     formatted_s+="***";
+//   }
+// formatted_s+=first_element[i];
+//     return formatted_s;
+// }
+
+    //method 2:
+// string twoSort(vector<string> s)
+// {
+//   sort(s.begin(),s.end(),less<string>());//ascending 1 2 3 4 5
+//   // sort(s.rbegin(), s.rend()); //"world" //as decending 5 4 3 2 1
+//   string first_e, formatted_s="";
+//   first_e=s.at(0);
+//   for (char c:first_e)
+//   {
+//     formatted_s+=c;
+//     formatted_s+="***";
+
+//   }
+//     formatted_s.pop_back();
+//   formatted_s.pop_back();
+//   formatted_s.pop_back();
+//   return formatted_s;
+// }
+//methode 3:
+string twoSort(vector<string> s)
+{
+  sort(s.begin(),s.end(),less<string>());//ascending 1 2 3 4 5
+  // sort(s.rbegin(), s.rend()); //"world" //as decending 5 4 3 2 1
+  stringstream my_stream;
+  string first_e=s.at(0);
+  for (char c:first_e)
+  {
+    if(c ==first_e[first_e.length()-1] ) {my_stream<<c;
+    break;}
+    my_stream<<c<<"***";
+  }
+  return my_stream.str();
+}
+
+int main() {
+  cout<<twoSort({ "the","bitcoin", "take", "over", "world", "maybe", "who", "knows", "perhaps"});
+    // countBy(2,5);    
+   return 0;
+}
