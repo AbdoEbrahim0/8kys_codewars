@@ -1,0 +1,24 @@
+//method 1 & 2:
+// std::vector<int> countBy(int x,int n){
+//   vector <int >vec;
+//   // for (int i=x;i<=(x*n);)
+//   // {
+//   //   cout<<i<<" ";
+//   //   vec.push_back(i);
+//   //   i=i+x;     
+//   // }
+
+//   for (int i=1;  i<=n  ;i++)
+//   {
+//     cout<<i*x<<" ";
+//   vec.push_back(i*x);     
+//   }
+  
+//   return vec;
+// }
+
+std::vector<int> countBy(int x,int n){
+  vector vec(n,x);
+  inclusive_scan(vec.cbegin(),vec.cend(),vec.begin(),plus{});
+  return vec;
+}
