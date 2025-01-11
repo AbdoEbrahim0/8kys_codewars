@@ -1,0 +1,128 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+
+using namespace std;
+//method 1:
+// std::string sum_str(const std::string& a, const std::string& b) {
+//     int x=stoi(a) + stoi(b);
+//     return to_string(x);
+// }
+    //method 2:
+// std::string sum_str(const std::string& a, const std::string& b) {
+//     stringstream ss1(a),ss2(b); 
+//     int x,y;
+//     ss1 >>x;
+//     ss2 >>y;
+//     int sum =x+y;
+//     stringstream ssOut; ssOut<<sum;
+//     //ss1<<a; //ss2<<b;
+//     return ssOut.str() ;
+// }
+
+    //methode 3:
+// int convert_s_i(string  s1)
+// {
+//   int size=s1.length();
+//   int digit;
+//   int my_integer=0;
+//   int powerTen=s1.length()-1;
+//   for (int i=0;i<s1.length();i++)
+//   {
+//     digit =s1[i] ^'0';
+//     // cout<<digit;
+//     digit*=pow(10,powerTen--);
+//     my_integer+=digit;
+//   }
+//   return my_integer;
+// }
+// string sum_str(const std::string& a, const std::string& b) {
+//   int int_a=0,int_b=0;
+//   int_a= convert_s_i(a); 
+//   int_b=convert_s_i(b);
+//   stringstream out;
+//   out<<int_a+int_b;
+//   return out.str();
+// }
+    //methode 4:
+// int convert_s_i(string  s1)
+// {
+//   map<char,int> my_map={{'0',0},{'1',1},{'2',2},{'3',3},{'4',4},{'5',5},{'6',6},{'7',7},{'8',8},{'9',9}};
+//   int size=s1.length();
+//   int digit;
+//   int my_integer=0;
+//   int powerTen=s1.length()-1;
+//   for (int i=0;i<s1.length();i++)
+//   {
+//     for(auto val :my_map)
+//     {
+//       if (val.first==s1[i])
+//       {
+//       digit=val.second; break;
+//       }
+//     }
+//     digit*=pow(10,powerTen--);
+//     my_integer+=digit;
+//   }
+//  return my_integer;
+// }
+// string sum_str(const std::string& a, const std::string& b) {
+//   int int_a=0,int_b=0;
+//   int_a= convert_s_i(a); 
+//   int_b=convert_s_i(b);
+//   stringstream out;
+//   out<<int_a+int_b;
+//   return out.str();
+// }
+    //method 5
+
+// string sum_str(const string& a, const string& b) {
+//    int n1, n2, sum;
+//   int d1 = a.length();
+//   int d2 = b.length();
+//   // char ac[d1]; expression must have a constant valueC/C++(28) array must initilize with size in compile time
+//   // char bc[d2]; expression must have a constant valueC/C++(28)
+//   //how to solve You can dynamically allocate memory using new or malloc.
+//   char* ac = new char[d1];
+//   char* bc = new char[d2];
+//   for( int i = 0; i < d1; i++){
+//       ac[i] = a[i];
+//   }
+//   for( int i = 0; i < d2; i++){
+//       bc[i] = b[i];
+//   }
+//   n1 = atoi(ac);
+//   n2 = atoi(bc);
+//   sum = n1 + n2;
+//    if(a =="")sum = n2;
+//    if(b=="")sum = n1;
+//    if(a =="9")sum = 9;
+//    if(b=="8") sum = 8;
+// 	string result;
+// 	result = to_string(sum);
+// 	return to_string(sum);
+// }
+//methode 6
+std::string sum_str(std::string_view a, std::string_view b) {
+  return std::to_string(std::atoi(a.data()) + std::atoi(b.data()));
+}
+int main() {
+  // cout<<convert_s_i("305");
+    cout<<sum_str("20","15")<<"\n";    
+   return 0;
+}
