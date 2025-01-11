@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+
+using namespace std;
+//method 1:
+// int get_age(const std::string& she_said) {  
+//     char arr[1];
+//     arr[0]=she_said[0];
+//     return atoi(arr);
+// }
+int get_age(const std::string& she_said) {
+    
+    int x ;
+    x=she_said[0] ^ '0';
+    return x;
+}
+int main() {
+  // cout<<convert_s_i("305");
+    cout<<get_age("5 years old")<<"\n";    
+   return 0;
+}
