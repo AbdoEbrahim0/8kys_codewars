@@ -1,0 +1,35 @@
+#include <string>
+#include <cmath>
+
+using namespace std;
+int tenPowerFn(int n) //to get 10^?  ? refer to tenpower
+{
+  int tenPower=0;
+    while (n>=10)
+  {
+    n=n/10;
+    tenPower++;
+  }
+return tenPower;
+}
+std::string number_to_string(int num) {
+  bool is_negtive=false;  
+  if (num <0) {
+        num = -num; // Make the number positive for digit extraction
+          is_negtive=true;
+  }
+  string out="";
+  int temp_n=num;
+  int tenPower=tenPowerFn(num);
+  int numOfDigits=tenPower;
+    for (int i=0; i<=numOfDigits;i++)
+    {
+      int digit =temp_n/floor( (pow(10,tenPower)));//302/100=3  //2/10=0.2=0  //2/1=2
+      out+=char(digit+48);                          // '3'      //'0'         //'2'
+      temp_n=temp_n-floor(pow(10,tenPower--)) *digit;         //302-100*3=2  //2-10*0=2
+    }
+  
+  return is_negtive?  "-"+out : out;
+  
+}
+
