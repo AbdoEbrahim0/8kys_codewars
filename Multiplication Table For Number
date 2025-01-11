@@ -1,0 +1,72 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+
+using namespace std;
+//method 1:
+// std::string multi_table(int number)
+// {
+//   string out="";
+//   stringstream ss;
+//   for (int i=1;i<=10;i++)
+//   {
+//     ss<<i<<" * "<<number<< " = "<<i*number<<"\n";
+//   }
+//     return ss.str();
+// }
+// std::string multi_table(int number)
+// {
+//   string out="";
+//   int i=1;
+//   for (i;i<10;i++)
+//   {
+//     out+=to_string(i)+" * "+to_string(number)+ " = "+to_string(i*number)+"\n";
+//   }
+//   out+=to_string(i)+" * "+to_string(number)+ " = "+to_string(i*number);
+// return out ;
+// }
+
+// std::string multi_table(int number)
+// {
+//   string out="";
+//   int i=1;
+//   for (i;i<=10;i++)
+//   {
+//     out+=to_string(i)+" * "+to_string(number)+ " = "+to_string(i*number)+"\n";
+//   }
+//   out.pop_back();
+// return out ;
+// }
+
+
+string multi_table(int n){
+  string ans = "";
+  for(int i = 1; i<=10; i++){
+    int m = i*n;
+    if(i!=10)
+      ans.append(to_string(i)+" * "+to_string(n)+" = "+to_string(m)+"\n");
+    else
+      ans.append(to_string(i)+" * "+to_string(n)+" = "+to_string(m));
+  }
+  return ans;
+}
+int main() {
+  // cout<<convert_s_i("305");
+    cout<<multi_table(5)<<"\n";    
+   return 0;
+}
