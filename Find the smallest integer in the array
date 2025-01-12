@@ -1,0 +1,16 @@
+#include <vector>
+
+using namespace std; 
+
+int findSmallest(vector <int> list)
+{
+   int min=list[0];
+  for (int val : list)
+    {
+    if(val<min) min =val;
+  }
+  return min;
+}
+//methode 2
+sort(list.begin(),list.end());
+  return list.at(0);
