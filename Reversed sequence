@@ -1,0 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+using namespace std;
+    //method 1:
+// std::vector<int> reverseSeq(int n) {
+//     vector<int>vec;
+//   while (n>=0) 
+//   {
+//     vec.push_back(n--) ;  
+//   }
+//    return vec;
+// }
+//method 2:
+// std::vector<int> reverseSeq(int n) {
+//     vector<int>vec(n);
+//   iota(vec.begin(), vec.end(), 1);  //   starting from 1 iterate sequential using iota
+//     reverse(vec.begin(),vec.end());
+//    return vec;
+// }
+    //method 3:
+// std::vector<int> reverseSeq(int n) {
+//   std::vector<int> seq(n);
+//   std::iota(seq.rbegin(), seq.rend(), 1); 
+//   return seq;
+// }
+//method 4:
+std::vector<int> reverseSeq(int n) {
+  std::vector<int> reversed(n);
+  std::generate(reversed.begin(), reversed.end(), [i=n]()mutable{return i--;});
+  return reversed;
+}
