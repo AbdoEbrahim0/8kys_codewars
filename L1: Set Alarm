@@ -1,0 +1,7 @@
+using namespace std;
+
+bool set_alarm(const bool& employed,const bool& vacation){
+  if(employed==1 && vacation==0)
+  {return true ;}
+  return false;
+}
