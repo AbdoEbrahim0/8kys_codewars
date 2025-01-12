@@ -1,0 +1,14 @@
+#include <vector>
+
+int get_average(std::vector <int> marks)
+{
+  int sum=0;
+  for (int val :marks)
+  {
+    if(val>=0)
+    {
+      sum+=val;
+    }
+  }
+  return sum/marks.size();
+}
