@@ -1,0 +1,13 @@
+#include <vector>
+
+int positive_sum (const std::vector<int> arr){
+  int sum=0;
+  for (int val :arr)
+  {
+    if(val>=0)
+    {
+      sum+=val;
+    }
+  }
+  return sum;
+}
