@@ -1,0 +1,55 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+using namespace std;
+    //method 1:
+// bool betterThanAverage(std::vector<int> classPoints, int yourPoints) {
+//   int sum=0;
+//   for (int val:classPoints)
+//   {
+//     sum+=val;
+//   }
+//   float avg=sum/classPoints.size();
+//   return yourPoints>avg? true:false; 
+// }
+    //method 2:
+// bool betterThanAverage(std::vector<int> classPoints, int yourPoints) {
+//   int sum;
+//   sum=accumulate(classPoints.cbegin(), classPoints.cend(), 0);
+//   float avg=sum/classPoints.size();
+//   return yourPoints>avg? true:false; 
+// }
+    //method 3:
+bool betterThanAverage(std::vector<int> classPoints, int yourPoints) {
+  int total_score = 0;
+  double avg;
+  classPoints.push_back(yourPoints);
+  std::for_each(classPoints.begin(), classPoints.end(), [&](int& n){total_score += n;});
+  avg = total_score / classPoints.size();
+  return (double)yourPoints > avg;
+}
+int main() {
+  
+    // vector<int>vvv{ 1, 1, 11, 2, 3  };
+    // vector<int>vvv {-6 ,-1 ,10 ,-12};
+    // string str="!Hi! Hi!";
+    // cout<< betterThanAverage(str);
+    
+   return 0;
+}
