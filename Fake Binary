@@ -1,0 +1,58 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+using namespace std;
+    //method 1:
+// std::string fakeBin(std::string str){
+//   //your code here
+//   for (char &c:str)
+//   {
+//     if(c<=char(52) && c>=char(48)) // equivulant to if(int(c)<=52 && int(c)>=48)
+//     {
+//       c='0';
+//     }else if(c>=char(53) && c<=char(57)) //equivulant to else if(int(c)>=53 && int(c)<=57)
+//     {
+//       c='1';
+//     }
+//   }
+//   return  str;
+// }
+// methode 3:
+std::string fakeBin(std::string str){
+  for (char &c:str)
+  {
+    if(c-'0'>=0 && c-'0'<=4)
+    {
+      c='0';
+    }else if(c-'0'>=5 && c-'0'<10)
+    {
+      c='1';
+    }
+  }
+  return  str;
+}
+
+int main() {
+  
+    // vector<int>vvv{ 1, 1, 11, 2, 3  };
+    // vector<int>vvv {-6 ,-1 ,10 ,-12};
+    string str="45385593107843568";
+    cout<< fakeBin(str);    
+   return 0;
+}
