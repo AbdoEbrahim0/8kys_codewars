@@ -1,0 +1,12 @@
+#include <cmath> // for std::isfinite
+#include <iostream>
+using namespace std;
+double SakuraFall(double v) {
+  /*
+  v=distance/time where 5=d/80  d=80*5=400 cm
+  time =d/v
+  */
+  
+  double time=(400.0)/v  ;  
+  return  (isfinite(time) && (time>=0)) ? time:0 ;
+  }
