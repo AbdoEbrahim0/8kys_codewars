@@ -1,10 +1,89 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+using namespace std;
+    //method 1:
+// string replace(const string &s)
+// {
+//   string copy(s);
+//   string vowel="aeiouAEIOU";
+//   for(int i=0;i<vowel.size();i++)
+//   {
+//       replace(copy.begin(),copy.end(),vowel[i],'!');
+//   }
+//     return copy; //coding and coding....
+// }
+
+  // methode 3
+//   string replace( string &s)
+// {
+//       string res =regex_replace(s ,regex ("[aeiouAEIOU]"),"!");
+//     return res; //coding and coding....
+// }
+
+/*
+The key difference is that std::regex_replace never modifies the input string directly. It always produces a new string, and you must assign or return it to preserve the result.
+------------
+npos is a large unsigned integer, typically the maximum value for the size_t type (e.g., 18446744073709551615 on a 64-bit system).
+It is designed to indicate "not found" because it is a value that would never represent a valid position in a string.
+-----------
+move()
+Avoid unnecessary copying:
+Without std::move, the return statement might create a copy of s to return it. This copy involves allocating new memory for the string.
+With std::move, the returned value takes ownership of s's resources, avoiding a copy.
+Increase Performance:
+Moving a string is faster than copying because it transfers ownership of internal data (e.g., the dynamically allocated buffer), instead of duplicating it.
+*/
+// methode 4:
+// string replace(string& s) {
+//   string vowels = "aeiouAEIOU";
+//   for (auto& c : s) if (vowels.find(c) != string::npos) c = '!';
+//   return move(s);
+// }
+// methode 5:
 string replace(const string &s)
 {
-  string copy(s);
-  string vowel="aeiouAEIOU";
-  for(int i=0;i<vowel.size();i++)
+  string text = "";
+  for(int i = 0; i < s.length(); i++)
   {
-      replace(copy.begin(),copy.end(),vowel[i],'!');
+    switch(tolower(s[i]))
+    {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+                  text += "!";
+                  break;
+        default:
+                  text += s[i];
+                  break;
+    }
   }
-    return copy; //coding and coding....
+  return text;
+}
+int main() {
+  
+    // vector<int>vvv{ 1, 1, 11, 2, 3  };
+    // vector<int>vvv {-6 ,-1 ,10 ,-12};
+    string str="!Hi! Hi!";
+    cout<< replace(str);
+    
+   return 0;
 }
