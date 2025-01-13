@@ -1,0 +1,10 @@
+string replace(const string &s)
+{
+  string copy(s);
+  string vowel="aeiouAEIOU";
+  for(int i=0;i<vowel.size();i++)
+  {
+      replace(copy.begin(),copy.end(),vowel[i],'!');
+  }
+    return copy; //coding and coding....
+}
