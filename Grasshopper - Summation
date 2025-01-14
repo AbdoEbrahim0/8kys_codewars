@@ -1,3 +1,8 @@
 int summation(int num){
  return (num*(num+1))/2;
 }
+int summation(int num){
+  if (num == 0) return 0;
+ return num + summation(num-1);
+  // 8 + (7 + (6 + (5 + (4 + (3 + (2 + (1 + (0))))))))
+}
