@@ -1,0 +1,6 @@
+int twice_as_old(int dad, int son) {
+  return (dad-(son*2) >=0) ? dad-(son*2):(dad-(son*2)) *-1 ;
+}
+int twice_as_old(int dad, int son) {
+  return abs(dad-(son*2) ;
+}
