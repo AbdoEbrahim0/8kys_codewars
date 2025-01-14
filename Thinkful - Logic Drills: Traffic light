@@ -1,0 +1,16 @@
+ #include <string>
+
+ using namespace std;
+    //method 1:
+std::string update_light(std::string current) {
+  string arr[3]={"green","yellow","red"};
+  int i=0;
+  int next=0;
+  for(int i=0;i<3;i++)
+  {
+    next+=1;
+    if(next==3) next=0;
+    if (current ==arr[i]) return arr[next];
+  } 
+return arr[next];
+}
