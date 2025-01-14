@@ -1,0 +1,9 @@
+    //method 1:
+std::string DNAtoRNA(std::string dna){
+  replace(dna.begin(),dna.end(),'T','U');
+  return dna;
+}
+std::string DNAtoRNA(std::string dna){
+  move(dna)=regex_replace(dna ,regex("[T]"),"U");
+  return dna;
+}
