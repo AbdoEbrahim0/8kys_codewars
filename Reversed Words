@@ -1,0 +1,65 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+ using namespace std;
+    //method 1:
+// std::string reverse_words(const std::string& str) {
+//     stringstream ss(str);
+//     string my_string,res;
+//     vector<string>vec;
+//     while(ss>>my_string ) vec.push_back(my_string); 
+//     reverse(vec.begin(),vec.end());
+//     for (string val:vec)
+//     {
+//         res+=val+" ";
+//     }
+//     res.pop_back();
+//     return res;
+// }
+//method 2:
+// std::string reverse_words(const std::string& str) {
+    
+//     string my_string="",res="";
+//     vector<string>vec;
+//      for(int i=0;i<str.size();i++)
+//      {
+//         if(str[i]!=' '){
+//             my_string+=str[i];
+//         }else{
+//             vec.push_back(my_string);
+//             my_string.clear();
+//         }
+//      }
+//      vec.push_back(my_string);
+//      int i=vec.size()-1;
+//      for(i;i>=0;i--)
+//      {
+//         res+=vec.at(i)+" ";
+//      }
+//     return res;
+// }
+//method 3:
+std::string reverse_words(const std::string& str) {
+  std::string s;
+  std::stringstream ss(str);
+  std::string w;
+  while (ss >> w) s = w + " " + s; // hello world    //1st hello+" "+"" ="hello "  //2nd world +" " +hello" " = "world hello "  
+  s.pop_back();
+  return s;
+}
