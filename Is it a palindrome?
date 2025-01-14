@@ -1,0 +1,70 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+ using namespace std;
+    //method 1:
+// bool isPalindrom (const std::string& str)
+// {
+//     string orig(str), copy=str;
+//     for (char& ch:copy) ch=tolower(ch);
+//     for (char& ch_o:orig) ch_o=tolower(ch_o);
+//      reverse(copy.begin(),copy.end());
+//   return orig==copy;
+// }
+//method 2
+// bool isPalindrom (const std::string& str)
+// {
+    
+//     int end= str.size()-1;
+//     for(int i=0;i<str.size();i++)
+//     {
+//         if (toupper( str[i])!= toupper(str[end])) return false;
+//         end--;
+//     }
+//   return true;
+// }
+
+//method 3
+// bool isPalindrom (const std::string& str)
+// {
+//   const size_t len = str.length();
+//   for (size_t i = 0; i < len / 2; i += 1) {
+//     if (tolower(str[i]) != tolower(str[len - i - 1])) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+//method 4
+bool isPalindrom (const std::string& str)
+{
+  string s = str;
+	// transform(s.cbegin(), s.cend(), s.begin(), ::tolower);
+    transform(s.begin(),s.end(),s.begin(),::tolower);
+  return s == string(s.rbegin(), s.rend());  //reverse fn make all charchters in lowercase
+}
+int main() {
+  
+    // vector<int>vvv{ 1, 1, 11, 2, 3  };
+    // vector<int>vvv {-6 ,-1 ,10 ,-12};
+    string str="Abba";
+    cout<<isPalindrom(str);
+    
+   return 0;
+}
