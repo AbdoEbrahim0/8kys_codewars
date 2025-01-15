@@ -1,0 +1,8 @@
+#include <vector>
+
+int sum(std::vector<int> nums) {
+  int res=0;
+  if(nums.empty()) return 0;
+  for(int val :nums) res+=val;
+  return res;
+}
