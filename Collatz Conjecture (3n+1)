@@ -1,0 +1,11 @@
+unsigned int hotpo(unsigned int n){
+    int cnt=0;
+    if(n == 1) return 0; //Optional Handler to n = 0
+    while (n>1)
+    {
+      if (n%2==0) {n=n/2;  cnt++;}
+      else {n=3*n+1;   cnt++;}
+      // cout<<n<<" ";
+    }
+    return cnt;
+}
