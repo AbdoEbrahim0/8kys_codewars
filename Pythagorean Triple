@@ -1,15 +1,26 @@
-int my_pow(int base,int x)
-{
-  while(x>1)
-  {
-base*=base;
-x--;
-  }
-  return base;
-}
+   //method 1:
 
+// bool PythagoreanTriple(const int a, const int b, const int c)
+// {
+//  return ( pow(a,2)+pow(b,2)==pow(c,2) || pow(a,2)+pow(c,2)==pow(b,2) || pow(c,2)+pow(b,2)==pow(a,2) );
+// }
+// int my_pow(int base,int x)
+// {
+//   while(x>1)
+//   {
+// base*=base;
+// x--;
+//   }
+//   return base;
+// }
+// bool PythagoreanTriple(const int a, const int b, const int c)
+// {
+//  return ( my_pow(a,2)+my_pow(b,2)==my_pow(c,2) || my_pow(a,2)+my_pow(c,2)==my_pow(b,2) || my_pow(c,2)+my_pow(b,2)==my_pow(a,2) );
+// }
+   //method 2:
 bool PythagoreanTriple(const int a, const int b, const int c)
 {
- return ( my_pow(a,2)+my_pow(b,2)==my_pow(c,2) || my_pow(a,2)+my_pow(c,2)==my_pow(b,2) || my_pow(c,2)+my_pow(b,2)==my_pow(a,2) );
-
+  vector <int> numbers = {a,b,c};
+  sort(numbers.begin(),numbers.end());
+  return pow(numbers[0],2) + pow(numbers[1],2) == pow(numbers[2],2);
 }
