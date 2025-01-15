@@ -1,0 +1,50 @@
+//method 1:
+unsigned short int expressionsMatter (unsigned short int a , unsigned short int b , unsigned short int c)
+{
+    // Your Code is Here .. Enjoy !!
+  // int res;
+  // res=a*(b+c) ;
+  // if (a*b*c>= res ) res=a*b*c;
+  // if (a+b*c>= res ) res=a+b*c;
+  // if ((a+b)*c>= res ) res=(a+b)*c;
+  // if (a+b+c>= res ) res=a+b+c;
+  // return (res); 
+//method 2:
+return std::max({
+  a * b * c,
+  a + b + c,
+  (a + b) * c,
+  a * (b + c),
+  a + b * c,
+  a * b + c}); 
+}
+//method 3:
+unsigned short int expressionsMatter (unsigned short int a , unsigned short int b , unsigned short int c)
+{
+    unsigned short int arr[6]={(a+ b)* c, a +(b* c), (a+ b)+ c, (a* b)+ c, a* (b+ c),(a* b)* c};
+    unsigned short int max=0;
+    for (int i=0; i<6; i++)
+    {
+    if (arr[i]>max) max=arr[i];
+    }   
+    return max ; 
+}
+
+bool usePlus(int x, int y)
+{
+  return x == 1 || y == 1;
+}
+
+unsigned short int applyOperator(int x, int y)
+{
+  return usePlus(x, y) ? x + y : x * y;
+}
+//method 4:
+unsigned short int expressionsMatter(unsigned short int a, unsigned short int b, unsigned short int c)
+{
+  if ((a + b) < (b + c)) {
+    return applyOperator(applyOperator(a, b), c);
+  } else {
+    return applyOperator(applyOperator(b, c), a);
+  }
+}
