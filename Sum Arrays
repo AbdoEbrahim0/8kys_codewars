@@ -6,3 +6,6 @@ int sum(std::vector<int> nums) {
   for(int val :nums) res+=val;
   return res;
 }
+int sum(const std::vector<int>& nums) {
+  return std::accumulate(nums.cbegin(), nums.cend(), 0);
+}
