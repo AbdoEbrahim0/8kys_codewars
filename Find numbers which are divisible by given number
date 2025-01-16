@@ -1,0 +1,14 @@
+#include <set>
+#include <cstdint>
+#include <array>
+ using namespace std;
+std::vector<int> divisible_by(std::vector<int> numbers, int divisor)
+{
+  vector<int> vec;
+  
+  for (int val : numbers)
+    {
+    if(val%divisor==0) vec.push_back(val);
+  }
+    return vec;
+}
