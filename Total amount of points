@@ -1,0 +1,47 @@
+    //method 1:
+// int whoWin(string g);
+// int points(const std::array<std::string, 10>& games) {
+//     int total =0;
+    
+//     for(int i=0; i<10;i++)
+//     {
+//       total+=whoWin(games.at(i));
+//     }
+//     return total;
+// }
+// int whoWin(string g)
+// {
+//   int win=3,tie=1;
+// if( (g[0]-'0') >(g[2]-'0') ) return 3; //win
+// else if( (g[0]-'0') ==(g[2]-'0') ) return 1; //tie
+// return 0;
+// }
+//methode 2
+// int points(const std::array<std::string, 10>& games) {
+//   int res = 0;
+//   for (const std::string& g : games)
+//     res += g[0] > g[2] ? 3 : g[0] == g[2] ? 1 : 0;
+//   return res;
+// }
+//methode 3
+int points(const std::array<std::string, 10>& games) {
+  int p = 0;
+  for(int i = 0; i < 10; i++){
+    int a = games[i] [0] - games[i] [2];
+    if(a>0)
+      p+=3;
+    else if(a == 0)
+      p+=1;
+  }
+    return p;
+}
+//methode 4
+
+int points(const std::array<std::string, 10>& games) {
+  int score = 0;
+  for(auto i : games) {
+    if(i[0] == i[2]) score += 1;
+    if(i[0] > i[2]) score += 3;
+  }
+  return score;
+}
