@@ -1,0 +1,56 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+#include <cstdint>
+#include <array>
+ using namespace std;
+    //method 1:
+/*
+Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+*/
+// std::vector<int> pipe_fix(const std::vector<int>& nums) {
+//   vector<int>vec;
+//   for (int i=1;i<nums.at(nums.size()-1);i++)
+//   {vec.push_back(i);
+//   cout<<vec.at(i-1);
+//   }
+//   return vec;
+// }
+
+
+// std::vector<int> pipe_fix(const std::vector<int>& nums) {
+//   vector<int>vec_s;
+//     int start = nums.front(); // Get the first element
+//     int end = nums.back();
+//   for (int i= start;i<=end;i++)
+//   {
+//     vec_s.push_back(i);
+//   }
+//   return vec_s;
+// }
+
+ using namespace std;
+std::vector<int> pipe_fix(const std::vector<int>& nums) {  
+    auto [min,max]=minmax_element(nums.begin(),nums.end());
+    vector<int> v(*max-*min +1); //15-2=13  2 3 4 5 .. 15   >> represent as 14 number in vector >>15-2 +1 13+1=14
+    iota(v.begin(),v.end(),*min);
+    
+    return v;
+
+}
