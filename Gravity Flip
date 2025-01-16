@@ -1,0 +1,42 @@
+#include <vector>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <stdio.h>
+#include <vector>
+#include <regex>
+#include <string>
+#include <numeric>
+#include <stdlib.h>
+#include <map>
+#include <numeric>
+#include<sstream>
+#include <set>
+#include <cstdint>
+#include <array>
+ using namespace std;
+vector<int> my_sort(vector<int>& v)
+{
+for (int i=0;i<v.size();i++)
+    {
+      for (int j=0;j<v.size();j++)
+        if (v.at(i) <= v.at(j)) swap( v.at(i), v.at(j) );
+    }
+  return v;
+}
+std::vector<int> flip(const char dir, const std::vector<int>& arr) {
+  vector<int> copy(arr);  
+  if(dir =='R'){ sort(copy.begin(),copy.end());}
+    else
+    {
+      my_sort(copy);
+      reverse(copy.begin(),copy.end());
+    }
+    return copy;  
+}
